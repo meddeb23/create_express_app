@@ -1,5 +1,5 @@
 {
-  "name": "@meddeb23/express_app_boilerplate",
+  "name": "@meddeb23/create_express_app",
   "version": "1.0.0",
   "description": "an application to manage home projects",
   "main": "index.js",
