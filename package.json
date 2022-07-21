@@ -1,8 +1,9 @@
 {
-  "name": "project_manager",
+  "name": "@meddeb23/express_app_boilerplate",
   "version": "1.0.0",
   "description": "an application to manage home projects",
   "main": "index.js",
+  "bin": "./bin/generate-app.js",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "dev": "nodemon ./src/index.ts"
