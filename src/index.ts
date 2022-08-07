@@ -3,6 +3,8 @@ import config from "./config";
 import express, { Request, Response } from "express";
 
 import Debug from "debug";
+import morgan from "morgan";
+
 import sequelize from "./database";
 
 const debug = Debug("app:startup");
@@ -10,6 +12,7 @@ const debug = Debug("app:startup");
 const app = express();
 
 app.use(express.json());
+app.use(morgan("common"));
 
 (async function () {
   await sequelize.sync({ force: false });

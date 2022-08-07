@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "an application to manage home projects",
   "main": "index.js",
-  "bin": "./bin/generate-app.js",
+  "bin": {
+    "create-module": "./bin/generate-module.js",
+    "create_express_project": "./bin/generate-app.js"
+  },
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "dev": "nodemon ./src/index.ts"
@@ -11,6 +14,7 @@
   "author": "meddeb",
   "license": "MIT",
   "dependencies": {
+    "@types/morgan": "^1.9.3",
     "debug": "^4.3.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
