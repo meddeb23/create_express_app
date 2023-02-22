@@ -16,18 +16,18 @@ const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName);
 const git_repo = "https://github.com/meddeb23/create_express_app.git";
 
-try {
-  fs.mkdirSync(projectPath);
-} catch (err) {
-  if (err.code === "EEXIST") {
-    console.log(
-      `The file ${projectName} already exist in the current directory, please give it another name.`
-    );
-  } else {
-    console.log(error);
-  }
-  process.exit(1);
-}
+// try {
+//   fs.mkdirSync(projectPath);
+// } catch (err) {
+//   if (err.code === "EEXIST") {
+//     console.log(
+//       `The file ${projectName} already exist in the current directory, please give it another name.`
+//     );
+//   } else {
+//     console.log(error);
+//   }
+//   process.exit(1);
+// }
 
 async function main() {
   try {
@@ -43,9 +43,23 @@ async function main() {
     execSync("npx rimraf ./.git");
     fs.rmSync(path.join(projectPath, "bin"), { recursive: true });
 
+    console.log("cleaning up");
+    let package_json = fs.readFileSync(
+      path.join(currentPath, "package.json"),
+      "utf-8"
+    );
+    package_json = JSON.parse(package_json);
+    (package_json.name = projectPath), path.basename(projectPath);
+    delete package_json.bin;
+    fs.writeFileSync(
+      path.join(currentPath, "package.json"),
+      JSON.stringify(package_json),
+      "utf-8"
+    );
+
     console.log("The installation is done, this is ready to use !");
   } catch (error) {
     console.log(error);
   }
 }
-main();
+// main();

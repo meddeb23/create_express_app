@@ -1,7 +1,7 @@
 {
   "name": "@meddeb23/create_express_app",
   "version": "1.0.0",
-  "description": "an application to manage home projects",
+  "description": "",
   "main": "index.js",
   "bin": {
     "create-module": "./bin/generate-module.js",
@@ -11,7 +11,7 @@
     "start": "ts-node ./src/index.ts",
     "dev": "nodemon ./src/index.ts"
   },
-  "author": "meddeb",
+  "author": "Meddeb",
   "license": "MIT",
   "dependencies": {
     "@types/morgan": "^1.9.3",
