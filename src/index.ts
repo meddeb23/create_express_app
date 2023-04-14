@@ -16,7 +16,7 @@ app.use(morgan("common"));
 
 (async function () {
   await sequelize.sync({ force: false });
-})().then(() => debug("init DB"));
+})().then(() => debug("🎈 Database connection established "));
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({ message: "hello world 👋" });
